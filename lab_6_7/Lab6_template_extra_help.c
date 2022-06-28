@@ -68,6 +68,9 @@ int notFound = 0;
 int total = 0;
 int measure = 0;
 char str[1000];
+char str1[1000];
+char str2[1000];
+char str3[1000];
 int i;
 int j;
 int a;
@@ -77,6 +80,8 @@ int pulse;
 char ch = 0;
 char swap = 0;
 int count = 0;
+int button = 0;
+
 void detect() {
   //  cyBOT_Scan_t scan;
     char * init = "Angle\tDistance(IR in cm)\tDistance(Ping in cm)\n\r";
@@ -174,11 +179,10 @@ void main() {
 
     timer_init();
     lcd_init();
-
+    button_init();
     oi_t * sensor = oi_alloc();
     oi_init(sensor);
     uart_init(115200);
-  //  cyBOT_init_Scan(0b0000);
    ping_initialize();
     adc_init();
     servo_init();
@@ -213,38 +217,68 @@ void main() {
 
     //Part 4
 
-    while (1) {
-        swap = uart_receive();
-        if (swap == 't') {
-            count = 0;
-            while (1) {
-                ch = uart_receive();
-                if (ch == 'w') {
-                   // collision_detection(sensor, 200);
-                   // detect();
-                    moveForward(sensor, 50);
-                    sprintf(str, "%d", sensor->cliffFrontLeftSignal);
-                                                lcd_printf(str);
-                    if(sensor->cliffFrontLeft == 1 || sensor->cliffFrontRight == 1 || sensor->cliffLeft == 1 || sensor->cliffRight == 1){
-                            moveBackward(sensor, 500);
+    while(1){
 
 
-                        }
 
-                } else if (ch == 's') {
-                    moveBackward(sensor, 50);
-                } else if (ch == 'a') {
-                    turnLeft(sensor, 2);
-                } else if (ch == 'd') {
-                    turnRight(sensor, 2);
-                } else if (ch == 'm') {
-                    detect();
 
-                } else {
-                    break;
-                }
 
-            }
+    }
+
+
+//    while (1) {
+////        swap = uart_receive();
+////        if (swap == 't')
+////        {
+////            button = button_getButton();
+////            if (button == 4)
+////            {
+////           lcd_printf("scammmmmmmmmmmm");
+////                moveForward(sensor, 50);
+////            }
+//            count = 0;
+////            sprintf(str, "%d", sensor->cliffFrontLeftSignal);
+////            lcd_printf(str);
+//            while (1) {
+//                ch = uart_receive();
+//                if (ch == 'w') {
+//                   // collision_detection(sensor, 200);
+//                   // detect();
+//                    moveForward(sensor, 50);
+//                    sprintf(str, "%d", sensor->cliffFrontLeftSignal );
+//                    sprintf(str1, "%d", sensor->cliffFrontRightSignal );
+//                    sprintf(str2, "%d", sensor->cliffLeftSignal );
+//                    sprintf(str3, "%d", sensor->cliffRightSignal );
+//                    lcd_printf("%s    %s\n     %s    %s\n",str,str1,str2,str3);
+////                    if(sensor->cliffFrontLeft == 1 || sensor->cliffFrontRight == 1 || sensor->cliffLeft == 1 || sensor->cliffRight == 1){
+////                            moveBackward(sensor, 500);
+//
+//
+////                        }
+//
+//                } else if (ch == 's') {
+//                    moveBackward(sensor, 50);
+//                    sprintf(str, "%d", sensor->cliffFrontLeftSignal);
+//                    sprintf(str1, "%d", sensor->cliffFrontRightSignal);
+//                    sprintf(str2, "%d", sensor->cliffLeftSignal);
+//                    sprintf(str3, "%d", sensor->cliffRightSignal);
+//                    lcd_printf("%s    %s\n     %s    %s\n", str, str1, str2, wstr3);
+//                }
+//                else if (ch == 'a')
+//                {
+//                    turnLeft(sensor, 2);
+//                } else if (ch == 'd') {
+//                    turnRight(sensor, 2);
+//                } else if (ch == 'm') {
+//                    detect();
+//
+//                } else {
+//                    break;
+//                }
+//
+//            }
+
+
 
 //        } else if (swap == 'j') {
 //            lcd_printf("autonomous");
