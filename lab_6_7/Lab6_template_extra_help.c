@@ -218,8 +218,26 @@ void main() {
     //Part 4
 
     while(1){
+                            sprintf(str, "%d", sensor->cliffFrontLeftSignal );
+                            sprintf(str1, "%d", sensor->cliffFrontRightSignal );
+                            lcd_printf("%s    %s",str,str1);
 
 
+
+        if(sensor->cliffFrontRightSignal>2550 && sensor->cliffFrontLeftSignal>2550){
+            moveForward(sensor, 5);
+        }
+        if(sensor->cliffFrontRightSignal<2550){
+                   GradualturnLeft(sensor, 3);
+                }
+        if(sensor->cliffFrontLeftSignal<2550){
+            GradualturnRight(sensor, 3);
+                       }
+
+        if(sensor->cliffFrontRightSignal<2550 && sensor->cliffFrontLeftSignal<2550){
+            oi_setWheels(0, 0);
+            break;
+        }
 
 
 
@@ -316,7 +334,7 @@ void main() {
 //            break;
 //        }
 //
-    }
-    }
+
+
     oi_free(sensor);
 }

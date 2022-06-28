@@ -11,7 +11,7 @@
 void moveForward(oi_t *sensor, double dist_mm){
     double sum = 0;
     //both wheels at max speed in the forward direction
-     oi_setWheels(150 , 150);
+     oi_setWheels(50 , 50);
      //Positive values in forward direction
      while(sum < dist_mm){
          oi_update(sensor);
@@ -34,6 +34,31 @@ void moveBackward(oi_t *sensor, double dist_mm){
     oi_setWheels(0, 0);//Stop
     //oi_free(sensor);
 }
+void GradualturnRight(oi_t *sensor, double dist_mm){
+    double sum = 0;
+    //both wheels at max speed in the forward direction
+     oi_setWheels(10 , 50);
+     //Positive values in forward direction
+     while(sum < dist_mm){
+         oi_update(sensor);
+         sum += sensor ->distance;
+     }
+     oi_setWheels(0, 0);//Stop
+     //oi_free(sensor);
+}
+void GradualturnLeft(oi_t *sensor, double dist_mm){
+    double sum = 0;
+    //both wheels at max speed in the forward direction
+     oi_setWheels(50 , 10);
+     //Positive values in forward direction
+     while(sum < dist_mm){
+         oi_update(sensor);
+         sum += sensor ->distance;
+     }
+     oi_setWheels(0, 0);//Stop
+     //oi_free(sensor);
+}
+
 
 void turnRight(oi_t *sensor, double angle){
     double currentAngle = 360;
@@ -41,7 +66,7 @@ void turnRight(oi_t *sensor, double angle){
     angle = 360 - angle;
     //right wheel at half the max speed in the backward direction
     //left wheel at half the max speed in the forward direction
-    oi_setWheels(-150, 150);
+    oi_setWheels(-50, 50);
     //clokckwise angles are negative
     while(currentAngle > angle){
         oi_update(sensor);
@@ -57,7 +82,7 @@ void turnLeft(oi_t *sensor, double angles){
    double currentAngle = 0;
    //left wheel at half the max speed in the backward direction
    //right wheel at half the max speed in the forward direction
-   oi_setWheels(150, -150);
+   oi_setWheels(50, -50);
    //counter clockwise angles are always positive
    while(currentAngle < angles){
        oi_update(sensor);
