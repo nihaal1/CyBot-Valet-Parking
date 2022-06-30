@@ -81,6 +81,7 @@ char ch = 0;
 char swap = 0;
 int count = 0;
 int button = 0;
+int parked=0;
 
 void detect() {
   //  cyBOT_Scan_t scan;
@@ -95,7 +96,7 @@ void detect() {
 //        data[i / 2] = ping_read(pulse);
         ping_activate();
         data[i/2] = ping_read();
-        //IR_dist = (11243 * pow(scan.IR_raw_val, -0.7693)) - 14;
+        IR_dist = (11243 * pow(adc_read(), -0.7693)) - 14;
         //IR_dist = (scan.IR_raw_val - 3351)/(-64.31);
        // dist[i / 2] = IR_dist;
         dist[i/2] = adc_read()/10;
@@ -103,7 +104,7 @@ void detect() {
         servo_move(i);
         timer_waitMillis(150);
 
-        sprintf(str, "%d\t%d\t\t\t\t%.2f\n\r", i, adc_read()/10, data[i/2]);
+        sprintf(str, "%d\t%d\t\t\t\t%.2f\n\r", i, IR_dist, data[i/2]);
         uart_sendStr(str);
     }
     for (j = 0; j <= 90; j++) {
@@ -147,8 +148,11 @@ void detect() {
                                 objects[index].width = sqrt(2*((double)startIndex *(double)endIndex) + otherAngle);
 //                otherAngle = (180 - objects[index].radialWidth) / 2;
 //                objects[index].width = 2 * cos((double)((otherAngle) * (3.14 / 180))) * (double) objects[index].data;
+                if( 2 * (j - (found / 2)) >= 70 &&  2 * (j - (found / 2))< 110){
                 index++;
+                }
                 found = 0;
+
             }
             if (found < 4 && found > 0) {
                 found = 0;
@@ -187,8 +191,8 @@ void main() {
     adc_init();
     servo_init();
 
-    right_calibration_value = 248500;
-    left_calibration_value = 1240900;
+    right_calibration_value = 327250;
+    left_calibration_value = 1293250;
     //Part 3
     //      uart_interrupt_init();
     //      while(1){
@@ -217,26 +221,44 @@ void main() {
 
     //Part 4
 
-    while(1){
+    while(parked==0){
                             sprintf(str, "%d", sensor->cliffFrontLeftSignal );
                             sprintf(str1, "%d", sensor->cliffFrontRightSignal );
-                            lcd_printf("%s    %s",str,str1);
+                            sprintf(str2, "%d", sensor->cliffRightSignal );
+                            lcd_printf("%s    %s \n   %s",str,str1,str2);
 
 
 
-        if(sensor->cliffFrontRightSignal>2550 && sensor->cliffFrontLeftSignal>2550){
+        if(sensor->cliffFrontRightSignal>2500 && sensor->cliffFrontLeftSignal>2500){
             moveForward(sensor, 5);
         }
-        if(sensor->cliffFrontRightSignal<2550){
+        if(sensor->cliffFrontRightSignal<2500){
                    GradualturnLeft(sensor, 3);
                 }
-        if(sensor->cliffFrontLeftSignal<2550){
+        if(sensor->cliffFrontLeftSignal<2500){
             GradualturnRight(sensor, 3);
                        }
 
-        if(sensor->cliffFrontRightSignal<2550 && sensor->cliffFrontLeftSignal<2550){
-            oi_setWheels(0, 0);
-            break;
+//        if(sensor->cliffFrontRightSignal<2550 && sensor->cliffFrontLeftSignal<2550){
+//            oi_setWheels(0, 0);
+//            break;
+//        }
+        if(sensor->cliffRightSignal>2500){
+            turnLeft(sensor, 85);
+            detect();
+            if(index>0){
+            turnRight(sensor, 85);
+            while(sensor->cliffRightSignal>2500){
+                moveForward(sensor, 5);
+            }
+            }
+            if(index==0){
+                while(sensor->cliffFrontRightSignal<2500 && sensor->cliffFrontLeftSignal<2500){
+                    moveForward(sensor, 5);
+                }
+                oi_setWheels(0, 0);
+               parked=1;
+            }
         }
 
 
