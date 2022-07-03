@@ -27,7 +27,6 @@ Lab6_template_extra_help.obj: C:/ti/ccs1031/ccs/tools/compiler/ti-cgt-arm_20.2.4
 Lab6_template_extra_help.obj: C:/ti/ccs1031/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/math.h
 Lab6_template_extra_help.obj: C:/ti/ccs1031/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/_defs.h
 Lab6_template_extra_help.obj: C:/ti/ccs1031/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/machine/_limits.h
-Lab6_template_extra_help.obj: ../cyBot_Scan.h
 Lab6_template_extra_help.obj: C:/ti/ccs1031/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/time.h
 Lab6_template_extra_help.obj: C:/ti/ccs1031/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/abi_prefix.h
 Lab6_template_extra_help.obj: C:/ti/ccs1031/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/xlocale/_time.h
@@ -89,8 +88,6 @@ C:/ti/ccs1031/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/math.h:
 C:/ti/ccs1031/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/_defs.h:
 
 C:/ti/ccs1031/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/machine/_limits.h:
-
-../cyBot_Scan.h:
 
 C:/ti/ccs1031/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/time.h:
 

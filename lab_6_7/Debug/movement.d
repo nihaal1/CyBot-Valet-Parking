@@ -28,6 +28,11 @@ movement.obj: ../lcd.h
 movement.obj: C:/ti/ccs1031/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/time.h
 movement.obj: C:/ti/ccs1031/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/abi_prefix.h
 movement.obj: C:/ti/ccs1031/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/xlocale/_time.h
+movement.obj: ../servo.h
+movement.obj: ../ping.h
+movement.obj: ../adc.h
+movement.obj: ../button.h
+movement.obj: ../uart_extra_help.h
 
 ../movement.c:
 
@@ -84,4 +89,14 @@ C:/ti/ccs1031/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/time.h:
 C:/ti/ccs1031/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/abi_prefix.h:
 
 C:/ti/ccs1031/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/xlocale/_time.h:
+
+../servo.h:
+
+../ping.h:
+
+../adc.h:
+
+../button.h:
+
+../uart_extra_help.h:
 
