@@ -15,11 +15,13 @@ void moveBackward(oi_t *sensor, double dist__mm);
 
 void turnLeft(oi_t *sensor, double angle);
 
-void GradualturnRight(oi_t *sensor, double dist_mm);
-
-void GradualturnLeft(oi_t *sensor, double dist_mm);
-
 void turnRight(oi_t *sensor, double angle);
+
+void GradualturnLeft(oi_t *sensor, double angle);
+
+void GradualturnRight(oi_t *sensor, double angle);
+
+void load_songs(void);
 
 void collision_detection(oi_t *sensor, double dist_mm);
 #endif /* MOVEMENT_H_ */
