@@ -9,10 +9,10 @@ CMD_SRCS += \
 ../tm4c123gh6pm.cmd 
 
 C_SRCS += \
-../Lab6_template_extra_help.c \
 ../Timer.c \
 ../adc.c \
 ../button.c \
+../final_project_main.c \
 ../lcd.c \
 ../movement.c \
 ../open_interface.c \
@@ -23,10 +23,10 @@ C_SRCS += \
 ../uart_extra_help.c 
 
 C_DEPS += \
-./Lab6_template_extra_help.d \
 ./Timer.d \
 ./adc.d \
 ./button.d \
+./final_project_main.d \
 ./lcd.d \
 ./movement.d \
 ./open_interface.d \
@@ -37,10 +37,10 @@ C_DEPS += \
 ./uart_extra_help.d 
 
 OBJS += \
-./Lab6_template_extra_help.obj \
 ./Timer.obj \
 ./adc.obj \
 ./button.obj \
+./final_project_main.obj \
 ./lcd.obj \
 ./movement.obj \
 ./open_interface.obj \
@@ -51,10 +51,10 @@ OBJS += \
 ./uart_extra_help.obj 
 
 OBJS__QUOTED += \
-"Lab6_template_extra_help.obj" \
 "Timer.obj" \
 "adc.obj" \
 "button.obj" \
+"final_project_main.obj" \
 "lcd.obj" \
 "movement.obj" \
 "open_interface.obj" \
@@ -65,10 +65,10 @@ OBJS__QUOTED += \
 "uart_extra_help.obj" 
 
 C_DEPS__QUOTED += \
-"Lab6_template_extra_help.d" \
 "Timer.d" \
 "adc.d" \
 "button.d" \
+"final_project_main.d" \
 "lcd.d" \
 "movement.d" \
 "open_interface.d" \
@@ -79,10 +79,10 @@ C_DEPS__QUOTED += \
 "uart_extra_help.d" 
 
 C_SRCS__QUOTED += \
-"../Lab6_template_extra_help.c" \
 "../Timer.c" \
 "../adc.c" \
 "../button.c" \
+"../final_project_main.c" \
 "../lcd.c" \
 "../movement.c" \
 "../open_interface.c" \
