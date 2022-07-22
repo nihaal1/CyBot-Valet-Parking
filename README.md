@@ -7,7 +7,10 @@ Project Group 1: Cybot Valet Service
 Group Members: Dana Boor, Varun Advani, Nihaal Zaheer, Kalyan Thapaliya
 
 Test Field:
-![test_field](https://user-images.githubusercontent.com/63922806/180497955-86f6895d-03b5-45ee-b779-3ddb900c29da.jpg)
+
+
+![test_field](https://user-images.githubusercontent.com/63922806/180498148-33bcaf23-35b1-44dc-8c72-16d0de03a0e7.jpg)
+
 
 
 
