@@ -14,6 +14,16 @@ Test Field:
 
 
 
+
+Command Line Interface:
+
+
+
+
+https://user-images.githubusercontent.com/63922806/180498762-0fce0696-ff62-492c-807a-54da1c5b6aac.mp4
+
+
+
 Test Field Summary: 
 The test field illustrates a parking lot for Cybots. The parking lot has 4 parking spaces, a designated entry and exit, and a single marked path that Cybots will follow. Each parking space would have a tape marker in front of it to indicate a parking space, and the Cybot would use object detection software and the ping/IR sensors to find an empty parking space. The single marked path will have tall objects that the Cybot will detect with the ping and IR sensors and sound a horn until the object is moved. Small objects will also be present and will be detected using the Cybot’s bump sensors. On bumping a small object, a horn is sounded and a parking attendant will be notified to press button 4 on the Cybot, for resuming motion. A user interface will be used to communicate a recall feature, that will return the cybot to the exit of the parking lot. The Cybot will use the single marked path  to make the necessary turns. 
 
