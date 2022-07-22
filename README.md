@@ -6,6 +6,14 @@ CPRE 288 Final Project on Automated Valet parking service
 Project Group 1: Cybot Valet Service
 Group Members: Dana Boor, Varun Advani, Nihaal Zaheer, Kalyan Thapaliya
 
+Test Field:
+
+
+
+
+Test Field Summary: 
+The test field illustrates a parking lot for Cybots. The parking lot has 4 parking spaces, a designated entry and exit, and a single marked path that Cybots will follow. Each parking space would have a tape marker in front of it to indicate a parking space, and the Cybot would use object detection software and the ping/IR sensors to find an empty parking space. The single marked path will have tall objects that the Cybot will detect with the ping and IR sensors and sound a horn until the object is moved. Small objects will also be present and will be detected using the Cybot’s bump sensors. On bumping a small object, a horn is sounded and a parking attendant will be notified to press button 4 on the Cybot, for resuming motion. A user interface will be used to communicate a recall feature, that will return the cybot to the exit of the parking lot. The Cybot will use the single marked path  to make the necessary turns. 
+
 
 Problem Statement:
 Problem: Vehicle owners need an alternative to manual valet services to park their vehicles.
@@ -26,13 +34,7 @@ Research Summary:
 	For vehicle owners concerned with personal safety, property damage, and theft we were interested to find out that several vehicle owners have reported violent crimes committed against them in parking areas [7]. Parking areas are the third most likely place for violent crimes to occur [8]. To combat this, many vehicle owners prefer to have their vehicle parked by a valet service. However, vehicle owners have also reported that they are concerned that their vehicles will be damaged by the valet service drivers or that their personal belongings may be stolen by the drivers [4]. Our autonomous parking system will provide the perfect solution to these concerns. By having vehicles safely park and retrieve themselves, vehicle owners can still enjoy the benefits of valet parking without having to worry about the concerns listed above.
 Our research into vehicle owners interested in the convenience of valet parking yielded very interesting information. Vehicle owners believe that valet parking saves time and is worth the cost of paying for the service [4]. The main motivation that we found for utilizing valet parking is that many vehicle owners find it frustrating trying to navigate unfamiliar parking areas, and that many find it difficult to locate their vehicle once they are ready to leave a parking area [5]. Moreover, Vehicle owners are impressed how well autonomous vehicles can park themselves and are trusting in the autonomous parking technology [1] and are interested in being able to remotely recall their vehicles out of a parking area [3]. Our autonomous valet parking system will offer this group of users the ability to enjoy the convenience of valet parking and the ability to park and retrieve their vehicles independent of human-operated valet services. 
 
-Test Field:
 
-
-
-
-Test Field Summary: 
-The test field illustrates a parking lot for Cybots. The parking lot has 4 parking spaces, a designated entry and exit, and a single marked path that Cybots will follow. Each parking space would have a tape marker in front of it to indicate a parking space, and the Cybot would use object detection software and the ping/IR sensors to find an empty parking space. The single marked path will have tall objects that the Cybot will detect with the ping and IR sensors and sound a horn until the object is moved. Small objects will also be present and will be detected using the Cybot’s bump sensors. On bumping a small object, a horn is sounded and a parking attendant will be notified to press button 4 on the Cybot, for resuming motion. A user interface will be used to communicate a recall feature, that will return the cybot to the exit of the parking lot. The Cybot will use the single marked path  to make the necessary turns. 
 
 
 
