@@ -3,7 +3,8 @@ CPRE 288 Final Project on Automated Valet parking service
 [CyBot Valet Parking - Project Prpopsal.pdf](https://github.com/nihaal1/CPRE288_Final_Project/files/9169762/CyBot.Valet.Parking._.Final.Project.pdf)
 
 
-Project Group 1: Cybot Valet Service
+Project: Cybot Valet Service
+
 Group Members: Dana Boor, Varun Advani, Nihaal Zaheer, Kalyan Thapaliya
 
 Test Field:
